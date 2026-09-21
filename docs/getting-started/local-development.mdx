@@ -1,0 +1,40 @@
+---
+title: 本地开发
+description: 在本地启动、预览和构建 WisePen 文档站。
+---
+
+# 本地开发
+
+文档站基于 Docusaurus。日常补内容主要编辑 `docs` 目录下的 MDX 文件，以及少量首页与主题样式文件。
+
+## 安装依赖
+
+```bash
+pnpm install
+```
+
+## 启动预览
+
+```bash
+pnpm start
+```
+
+默认会启动本地开发服务器，并在浏览器中打开文档站。编辑 MDX、TSX 或 CSS 后，页面会自动刷新。
+
+## 生产构建
+
+```bash
+pnpm build
+```
+
+构建产物会输出到 `build` 目录。部署前至少运行一次构建，确认侧边栏、链接和 MDX 语法都能通过。
+
+## 常见修改位置
+
+| 文件 | 用途 |
+| --- | --- |
+| `docs/**` | 文档正文 |
+| `sidebars.ts` | 左侧文档导航 |
+| `docusaurus.config.ts` | 站点名称、导航、页脚、插件配置 |
+| `src/pages/index.tsx` | 首页入口 |
+| `src/css/custom.css` | 全局主题样式 |

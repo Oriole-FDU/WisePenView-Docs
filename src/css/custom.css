@@ -1,30 +1,223 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --wise-font-family:
+    'PingFang SC',
+    'Noto Sans SC Variable',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    sans-serif;
+  --wise-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  --wise-accent: #248286;
+  --wise-accent-deep: #0c7478;
+  --wise-lime: #8acacd;
+  --wise-lime-deep: #60b5b9;
+  --wise-canvas: #f3fbfb;
+  --wise-ink: #1c3f40;
+  --wise-muted: #647478;
+  --wise-border: rgba(28, 63, 64, 0.16);
+  --wise-border-light: rgba(28, 63, 64, 0.12);
+  --wise-accent-soft: color-mix(in srgb, var(--wise-accent) 12%, #ffffff);
+
+  --ifm-font-family-base: var(--wise-font-family);
+  --ifm-font-family-monospace: var(--wise-font-mono);
+  --ifm-color-primary: var(--wise-accent);
+  --ifm-color-primary-dark: #20777a;
+  --ifm-color-primary-darker: #1d6d70;
+  --ifm-color-primary-darkest: #15595c;
+  --ifm-color-primary-light: #2a9296;
+  --ifm-color-primary-lighter: #36a2a6;
+  --ifm-color-primary-lightest: #60b5b9;
+  --ifm-background-color: var(--wise-canvas);
+  --ifm-navbar-background-color: rgba(243, 251, 251, 0.86);
+  --ifm-footer-background-color: var(--wise-canvas);
+  --ifm-heading-color: var(--wise-ink);
+  --ifm-font-color-base: var(--wise-ink);
+  --ifm-link-color: var(--wise-accent-deep);
+  --ifm-code-font-size: 92%;
+  --ifm-global-radius: 8px;
+  --ifm-toc-border-color: var(--wise-border-light);
+  --docusaurus-highlighted-code-line-bg: rgba(36, 130, 134, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --wise-canvas: #102829;
+  --wise-ink: #e9fbfb;
+  --wise-muted: #9db9bb;
+  --wise-border: rgba(221, 252, 252, 0.18);
+  --wise-border-light: rgba(221, 252, 252, 0.12);
+  --wise-accent-soft: rgba(138, 202, 205, 0.16);
+
+  --ifm-background-color: #102829;
+  --ifm-background-surface-color: #153031;
+  --ifm-navbar-background-color: rgba(16, 40, 41, 0.88);
+  --ifm-footer-background-color: #102829;
+  --ifm-heading-color: var(--wise-ink);
+  --ifm-font-color-base: var(--wise-ink);
+  --ifm-color-primary: #8acacd;
+  --ifm-color-primary-dark: #74bec2;
+  --ifm-color-primary-darker: #60b5b9;
+  --ifm-color-primary-darkest: #41999d;
+  --ifm-color-primary-light: #a1d6d8;
+  --ifm-color-primary-lighter: #b7e2e4;
+  --ifm-color-primary-lightest: #d2f0f1;
+  --docusaurus-highlighted-code-line-bg: rgba(138, 202, 205, 0.18);
+}
+
+html {
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--wise-canvas);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--wise-canvas);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--wise-border-light);
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: none;
+}
+
+.navbar__brand {
+  gap: 10px;
+}
+
+.navbar__logo {
+  width: 28px;
+  height: 28px;
+}
+
+.navbar__title {
+  color: var(--wise-ink);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.navbar__link {
+  color: var(--wise-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--wise-accent-deep);
+}
+
+.theme-doc-sidebar-container {
+  border-right-color: var(--wise-border-light) !important;
+  background: color-mix(in srgb, var(--wise-canvas) 82%, #ffffff);
+}
+
+.menu {
+  padding: 14px 12px !important;
+  font-size: 14px;
+}
+
+.menu__link {
+  border-radius: 6px;
+  color: var(--wise-muted);
+  line-height: 1.45;
+}
+
+.menu__link:hover,
+.menu__caret:hover {
+  background: var(--wise-accent-soft);
+  color: var(--wise-accent-deep);
+}
+
+.menu__link--active {
+  background: var(--wise-accent-soft);
+  color: var(--wise-accent-deep);
+  font-weight: 700;
+}
+
+.theme-doc-markdown {
+  max-width: 820px;
+}
+
+.markdown h1:first-child {
+  font-size: clamp(34px, 5vw, 48px);
+  letter-spacing: 0;
+}
+
+.markdown h2 {
+  margin-top: 2.3rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--wise-border-light);
+}
+
+.markdown p,
+.markdown li {
+  color: color-mix(in srgb, var(--wise-ink) 76%, var(--wise-muted));
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--wise-border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.markdown thead tr {
+  background: var(--wise-accent-soft);
+}
+
+.markdown th,
+.markdown td {
+  border-color: var(--wise-border-light);
+}
+
+.theme-admonition {
+  border-radius: 8px;
+}
+
+.pagination-nav__link {
+  border-color: var(--wise-border-light);
+  border-radius: 8px;
+}
+
+.footer {
+  border-top: 1px solid var(--wise-border-light);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(36, 130, 134, 0.22);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(36, 130, 134, 0.34);
+  background-clip: content-box;
 }

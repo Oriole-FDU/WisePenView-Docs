@@ -1,43 +1,27 @@
-# Website
+# WisePenView-Docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+WisePenView 与 WisePenView-Portal 的统一文档站，基于 Docusaurus 构建。
 
-## Installation
-
-```bash
-npm install
-```
-
-**Note**: feel free to use the package manager of your choice.
-
-## Local Development
+## 本地开发
 
 ```bash
-npm run start
+pnpm install
+pnpm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+启动后访问本地预览地址，编辑 `docs` 目录下的 MDX 文件即可实时刷新。
 
-## Build
+## 常用命令
 
 ```bash
-npm run build
+pnpm typecheck
+pnpm build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## 内容结构
 
-## Deployment
+- `docs/getting-started`：站点地图、本地开发。
+- `docs/operations`：部署说明。
+- `docs/contributing`：内容写作规范。
 
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+新增页面后，需要同步更新 `sidebars.ts`，并在发布前运行 `pnpm build`。
