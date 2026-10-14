@@ -40,7 +40,8 @@ const config: Config = {
   themeConfig: {
     colorMode: {
       defaultMode: 'light',
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
+      disableSwitch: true,
     },
     navbar: {
       title: 'WisePen Docs',
@@ -68,7 +69,6 @@ const config: Config = {
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };
