@@ -4,16 +4,16 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'WisePen Docs',
-  tagline: '面向 WisePenView 与 WisePenView-Portal 的产品与开发文档中心',
+  tagline: 'WisePen 文档中心',
   favicon: 'img/logo.svg',
 
   future: {
     v4: true,
   },
 
-  url: 'https://docs.wisepen.cn',
+  url: 'https://docuement.wisepen.oriole.cn',
   baseUrl: '/',
-  organizationName: 'Oriole-FDU',
+  organizationName: 'Oriole Studio',
   projectName: 'WisePenView-Docs',
   onBrokenLinks: 'throw',
 
@@ -57,7 +57,7 @@ const config: Config = {
           label: '文档',
         },
         {
-          href: 'https://github.com/Oriole-FDU/WisePenView-Docs',
+          href: 'https://github.com/Oriole-FDU/WisePen',
           label: 'GitHub',
           position: 'right',
         },
@@ -65,7 +65,7 @@ const config: Config = {
     },
     footer: {
       style: 'light',
-      copyright: `Copyright © ${new Date().getFullYear()} WisePen. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Oriole Studio.`,
     },
     prism: {
       theme: prismThemes.github,
