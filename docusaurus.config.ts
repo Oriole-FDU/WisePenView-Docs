@@ -3,15 +3,16 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'WisePen Docs',
-  tagline: 'WisePen 文档中心',
+  title: 'WisePen',
+  tagline: '让每一次学习与思考，持续生长',
   favicon: 'img/logo.svg',
 
   future: {
     v4: true,
+    faster: false,
   },
 
-  url: 'https://docuement.wisepen.oriole.cn',
+  url: 'https://home.wisepen.oriole.cn',
   baseUrl: '/',
   organizationName: 'Oriole Studio',
   projectName: 'WisePenView-Docs',
@@ -44,12 +45,18 @@ const config: Config = {
       disableSwitch: true,
     },
     navbar: {
-      title: 'WisePen Docs',
+      title: 'WisePen',
       logo: {
         alt: 'WisePen Logo',
         src: 'img/logo.svg',
       },
       items: [
+        {
+          to: '/',
+          label: '产品',
+          position: 'left',
+          activeBaseRegex: '^/$',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -60,6 +67,12 @@ const config: Config = {
           href: 'https://github.com/Oriole-FDU/WisePen',
           label: 'GitHub',
           position: 'right',
+        },
+        {
+          href: 'https://wisepen.oriole.cn/',
+          label: '在线体验',
+          position: 'right',
+          className: 'navbar-try-button',
         },
       ],
     },

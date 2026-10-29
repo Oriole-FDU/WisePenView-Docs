@@ -1,0 +1,234 @@
+.sidebar {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid #d9e2e2;
+  background: #f3fbfb;
+}
+
+.primaryNav .primarySelected {
+  color: #11777b;
+  background: #dff5f5;
+  font-weight: 650;
+}
+
+.treeHeading,
+.resourceTree > div {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #60646c;
+  white-space: nowrap;
+}
+
+.resourceTree > div span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resourceTree .treeItemSelected {
+  color: #11777b;
+  background: #dff5f5;
+  font-weight: 650;
+}
+
+.sidebarFooter strong,
+.sidebarFooter small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar svg {
+  flex: 0 0 auto;
+  stroke-width: 1.7;
+  width: 18px;
+  height: 18px;
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+
+.brand strong {
+  color: #1c2024;
+  letter-spacing: -0.025em;
+  font-size: 20px;
+}
+
+.sidebarHeader button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  color: #60646c;
+  background: transparent;
+}
+
+.primaryNav {
+  display: grid;
+  padding: 4px 12px 0;
+  gap: 3px;
+}
+
+.primaryNav > div {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #60646c;
+  white-space: nowrap;
+  min-height: 40px;
+  padding: 0 12px;
+  gap: 11px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: #d9e2e2;
+  margin: 14px 16px 8px;
+}
+
+.resourceToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #60646c;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.resourceTabs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.resourceTabs span {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 6px;
+  gap: 5px;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.resourceTabs .resourceTabActive {
+  color: #1c3f40;
+  background: #e1f7f8;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+.treeHeading {
+  font-weight: 600;
+  min-height: 36px;
+  padding: 0 17px;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.treeHeading svg:first-child {
+  width: 12px;
+}
+
+.resourceTree {
+  display: grid;
+  padding: 0 12px;
+  gap: 2px;
+}
+
+.resourceTree > div {
+  min-height: 36px;
+  padding: 0 12px;
+  gap: 9px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  border-top: 1px solid #d9e2e2;
+  min-height: 60px;
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.sidebarFooter > .avatar {
+  display: grid;
+  place-items: center;
+  border: 1px solid #cfe5e5;
+  border-radius: 50%;
+  color: #11777b;
+  background: #e1f7f8;
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.profileInfo {
+  min-width: 0;
+  margin-left: 12px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.25;
+}
+
+.profileActions {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.profileActions button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  color: #60646c;
+  background: transparent;
+}
+
+.profileActions button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebarFooter strong {
+  font-size: 12px;
+}
+
+.sidebarFooter small {
+  color: #80838d;
+  font-size: 10px;
+}

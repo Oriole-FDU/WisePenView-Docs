@@ -1,0 +1,516 @@
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.processTrace {
+  min-width: 0;
+  color: #60646c;
+}
+
+.assistantBody > p {
+  margin: 0;
+  color: #1c2024;
+  animation: riseIn 220ms ease both;
+}
+
+.agentPane {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 1px solid transparent;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 220ms, opacity 150ms ease, border-color 150ms ease;
+}
+
+.agentPane[data-open='true'] {
+  visibility: visible;
+  border-left-color: #e0e1e6;
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+.agentHeader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  min-height: 56px;
+  padding: 0 16px;
+  display: flex;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e1e6;
+  background: #fafefe;
+}
+
+.agentHeader > strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #1c2024;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.agentHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agentHeaderActions button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  color: #60646c;
+  background: transparent;
+}
+
+.agentHeaderActions button:hover {
+  background: #f0f0f3;
+}
+
+.agentHeaderActions svg {
+  color: currentColor;
+  stroke-width: 1.7;
+  width: 18px;
+  height: 18px;
+}
+
+.conversation {
+  min-height: 0;
+  flex: 1 1 0;
+  overflow: hidden;
+  color: #1c2024;
+  position: relative;
+  padding: 26px 24px 12px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.chatWelcome {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: #1c2024;
+  animation: riseIn 220ms ease both;
+}
+
+.chatWelcome img {
+  width: 52px;
+  height: 52px;
+}
+
+.chatWelcome strong {
+  max-width: 400px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.userMessage {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.userPrompt {
+  margin-left: auto;
+  width: fit-content;
+  margin: 0;
+  color: #1c2024;
+  background: #e1f7f8;
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 390px;
+  padding: 12px 16px;
+  border-radius: 12px 8px 12px 12px;
+  font-size: 14px;
+}
+
+.assistantMessage {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.assistantHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modelAvatar {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #11777b;
+  background: #e1f7f8;
+  width: 24px;
+  height: 24px;
+}
+
+.assistantHeader strong {
+  color: #60646c;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.assistantBody {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  gap: 8px;
+}
+
+.assistantBody > p,
+.streamingText {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.thinkingStatus {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #60646c;
+  font-size: 13px;
+}
+
+.thinkingStatus svg {
+  width: 14px;
+  height: 14px;
+}
+
+.thinkingStatus i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #8b8d98;
+  animation: thinkingDot 900ms ease-in-out infinite;
+}
+
+.thinkingStatus i:nth-of-type(2) { animation-delay: 150ms; }
+.thinkingStatus i:nth-of-type(3) { animation-delay: 300ms; }
+
+.processTrace > button {
+  display: flex;
+  align-items: center;
+  border: 0;
+  color: #60646c;
+  background: transparent;
+  font-weight: 500;
+  min-height: 24px;
+  padding: 0 4px;
+  gap: 5px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.processTrace > button svg {
+  flex: 0 0 auto;
+  width: 14px;
+  height: 14px;
+}
+
+.processTrace > button svg:last-child {
+  width: 12px;
+  height: 12px;
+}
+
+.traceDetails {
+  display: grid;
+  color: #80838d;
+  margin: 4px 0 0 23px;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.traceDetails span::before {
+  border-radius: 50%;
+  background: #8acacd;
+  content: '';
+  display: none;
+}
+
+.traceDetails span {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.traceDetails span > svg {
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+  flex: 0 0 auto;
+  color: #60b5b9;
+}
+
+.streamingText {
+  margin: 0;
+}
+
+.streamCursor {
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  display: inline-block;
+  vertical-align: -0.12em;
+  background: #248286;
+  animation: streamBlink 650ms step-end infinite;
+}
+
+.agentComposer {
+  flex: 0 0 auto;
+  background: linear-gradient(to bottom, transparent 0%, #fff 22%);
+  position: relative;
+  padding: 24px 24px 8px;
+}
+
+.inputCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d9d9e0;
+  background: #fff;
+  box-shadow:
+    0 1px 3px rgba(28, 32, 36, 0.08),
+    0 4px 16px rgba(28, 32, 36, 0.05),
+    0 0 0 1px rgba(28, 32, 36, 0.04);
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.composerText {
+  line-height: 1.6;
+  min-height: 42px;
+  padding: 8px 0;
+  color: #8b8d98;
+  font-size: 14px;
+}
+
+.composerTextActive {
+  color: #1c2024;
+}
+
+.inputToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  gap: 8px;
+}
+
+.toolbarLeft,
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.inputToolbar button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 0;
+  border-radius: 999px;
+  color: #60646c;
+  background: transparent;
+  font-size: 11px;
+}
+
+.inputToolbar button:hover {
+  background: #f0f0f3;
+}
+
+.inputToolbar button > svg {
+  flex: 0 0 auto;
+}
+
+.inputToolbar .toolbarSelected {
+  color: #11777b;
+  background: #e1f7f8;
+}
+
+.inputToolbar .sendButton {
+  padding: 0;
+  color: #8b8d98;
+  background: #e8e8ec;
+}
+
+.inputToolbar .sendButtonReady {
+  color: white;
+  background: #248286;
+}
+
+.agentComposer > small {
+  display: block;
+  text-align: center;
+  color: #a0a2aa;
+  line-height: 1.4;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.pickerPopover {
+  position: absolute;
+  z-index: 15;
+  padding: 6px;
+  border: 1px solid #d9d9e0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(28, 32, 36, 0.14);
+  animation: pickerIn 160ms ease both;
+}
+
+.pickerPopover > strong {
+  height: 28px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  color: #80838d;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.pickerPopover .pickerSelected {
+  color: #11777b;
+  background: #e1f7f8;
+}
+
+.pickerPopover .pickerSelected > svg {
+  color: #11777b;
+}
+
+.pickerPopover hr {
+  margin: 5px 4px;
+  border: 0;
+  border-top: 1px solid #e0e1e6;
+}
+
+.agentPicker {
+  width: 240px;
+}
+
+.modelPicker {
+  width: 320px;
+  max-height: 330px;
+  overflow: hidden;
+}
+
+.modelPicker b,
+.modelPicker small {
+  display: block;
+}
+
+.modelPicker b {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.modelPicker small {
+  color: #8b8d98;
+  font-size: 11px;
+}
+
+.modelPicker em {
+  height: 18px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  color: #2e7d50;
+  background: #e6f6ec;
+  font-size: 9px;
+  font-style: normal;
+  line-height: 18px;
+}
+
+.agentPickerAnchor,
+.modelPickerAnchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.agentPickerAnchor .pickerPopover,
+.modelPickerAnchor .pickerPopover {
+  bottom: calc(100% + 8px);
+}
+
+.agentPickerAnchor .agentPicker {
+  right: auto;
+  left: 0;
+}
+
+.modelPickerAnchor .modelPicker {
+  right: 0;
+  left: auto;
+}
+
+.pickerPopover > div {
+  display: grid;
+  align-items: center;
+  border-radius: 8px;
+  color: #465a5b;
+  font-size: 13px;
+  min-height: 36px;
+  padding: 4px 8px;
+  grid-template-columns: 20px minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.modelPicker > div {
+  min-height: 48px;
+}
+
+.modelNameLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modelNameLine b {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes thinkingDot {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-2px); }
+}
+
+@keyframes streamBlink {
+  50% { opacity: 0; }
+}
+
+@keyframes pickerIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}

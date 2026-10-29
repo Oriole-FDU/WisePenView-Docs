@@ -172,6 +172,20 @@ select {
   color: var(--wise-accent-deep);
 }
 
+.navbar .navbar-try-button {
+  margin-left: 8px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--wise-solid);
+  line-height: 1.2;
+}
+
+.navbar .navbar-try-button:hover {
+  color: #fff;
+  background: var(--wise-solid-hover);
+}
+
 /* 顶部导航使用轻量 Tab 状态，激活项沿导航底部显示主题色下划线。 */
 .navbar__item > .navbar__link {
   position: relative;
