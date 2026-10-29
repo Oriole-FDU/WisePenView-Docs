@@ -1,0 +1,32 @@
+.slot {
+  margin: 0 0.12em;
+  padding: 0 0.16em 0.04em;
+  display: inline-flex;
+  align-items: baseline;
+  color: #0c7478;
+  border-bottom: 1px solid rgba(36, 130, 134, 0.35);
+  white-space: nowrap;
+}
+
+.caret {
+  width: 1px;
+  height: 1.05em;
+  margin-left: 2px;
+  display: inline-block;
+  align-self: center;
+  background: #248286;
+  animation: blink 760ms step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    display: none;
+    animation: none;
+  }
+}
