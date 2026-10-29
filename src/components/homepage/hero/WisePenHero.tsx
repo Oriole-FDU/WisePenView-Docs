@@ -20,7 +20,7 @@ export function WisePenHero(): ReactNode {
         <div className={styles.heroActions}>
           <a className={styles.primaryAction} href="https://wisepen.oriole.cn/">即刻在线体验 <ArrowRight /></a>
         </div>
-        <div className={styles.heroLinks}><a href="https://github.com/Oriole-FDU/WisePen"><Github />GitHub</a><Link to="/docs/intro">使用文档</Link></div>
+        <div className={styles.heroLinks}><a href="https://github.com/Oriole-FDU/WisePen"><Github />GitHub</a><Link to="/docs/">使用文档</Link></div>
       </div>
       <div className={styles.demoAnchor} id="product-demo"><WisePenProductDemo /></div>
     </section>
