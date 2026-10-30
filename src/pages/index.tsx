@@ -1,6 +1,8 @@
 import type {ReactNode} from 'react';
 import Layout from '@theme/Layout';
 
+import {AudienceSection} from '../components/homepage/audiences/AudienceSection';
+import {ModelLogoStrip} from '../components/homepage/audiences/ModelLogoStrip';
 import {WisePenHero} from '../components/homepage/hero/WisePenHero';
 
 export default function HomePage(): ReactNode {
@@ -12,6 +14,8 @@ export default function HomePage(): ReactNode {
     >
       <main>
         <WisePenHero />
+        <ModelLogoStrip />
+        <AudienceSection />
       </main>
     </Layout>
   );

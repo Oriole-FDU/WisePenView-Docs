@@ -1,0 +1,185 @@
+.section {
+  color: #fff;
+  background: #0b1718;
+}
+
+.railSection {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+  height: calc(100vh - var(--ifm-navbar-height));
+  padding: 42px 0 28px;
+  overflow: hidden;
+}
+
+.railHeader {
+  margin: 0 var(--wise-site-gutter) 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.railHeader p {
+  margin: 0 0 10px;
+  color: #8acacd;
+  font-family: var(--wise-font-family);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.railHeader h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(28px, 2.7vw, 39px);
+  font-weight: 580;
+  line-height: 1.17;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.railHeader nav {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.railHeader nav button {
+  position: relative;
+  min-width: 108px;
+  min-height: 46px;
+  padding: 11px 15px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  color: #728586;
+  background: transparent;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.railHeader nav button::after {
+  position: absolute;
+  right: 8px;
+  bottom: -1px;
+  left: 8px;
+  height: 2px;
+  background: transparent;
+  content: '';
+}
+
+.railHeader nav button span {
+  font-family: var(--wise-font-mono);
+  font-size: 11px;
+}
+
+.railHeader nav .navActive {
+  color: #fff;
+}
+
+.railHeader nav .navActive::after {
+  background: #8acacd;
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  width: max-content;
+  padding: 0 var(--wise-site-gutter);
+  display: flex;
+  gap: 32px;
+  will-change: transform;
+  transition: transform 90ms linear;
+}
+
+@media (max-height: 790px) {
+  .sticky {
+    padding-top: 25px;
+  }
+
+  .railHeader {
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 1250px) {
+.railHeader {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.railHeader h2 {
+  white-space: normal;
+}
+}
+
+@media (max-width: 900px) {
+  .railSection {
+    height: auto !important;
+  }
+
+  .sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    padding: 60px 0;
+    overflow: visible;
+  }
+
+  .railHeader {
+    margin-inline: var(--wise-site-gutter);
+  }
+
+  .viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    gap: 20px;
+    transform: none !important;
+    transition: none;
+  }
+
+  .track > article {
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .railSection {
+    height: auto !important;
+  }
+
+  .sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .track {
+    width: auto;
+    flex-direction: column;
+    transform: none !important;
+    transition: none;
+  }
+
+  .track > article {
+    width: 100%;
+    min-width: 0;
+  }
+}

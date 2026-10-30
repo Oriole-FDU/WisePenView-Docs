@@ -1,0 +1,74 @@
+.viewport {
+  width: 100%;
+  overflow-x: auto;
+  border-top: 1px solid rgba(28, 63, 64, 0.12);
+  border-bottom: 1px solid rgba(28, 63, 64, 0.12);
+  background: #fff;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.grid {
+  min-width: 980px;
+  margin-inline: var(--wise-site-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(130px, 1fr)) minmax(190px, 1.25fr) repeat(3, minmax(130px, 1fr));
+  border-inline: 1px solid rgba(28, 63, 64, 0.12);
+}
+
+.logoCell,
+.messageCell {
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(28, 63, 64, 0.12);
+}
+
+.logoCell:last-child {
+  border-right: 0;
+}
+
+.logoCell {
+  gap: 12px;
+  color: #617374;
+  font-size: 17px;
+  font-weight: 650;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.logoCell:hover {
+  color: #173d3f;
+  background: #f3fbfb;
+}
+
+.logoCell svg {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  color: currentColor;
+  filter: grayscale(1);
+}
+
+.messageCell {
+  padding: 0 20px;
+  flex-direction: column;
+  gap: 5px;
+  color: #183f41;
+  text-align: center;
+}
+
+.messageCell strong {
+  font-family: var(--wise-font-family);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.messageCell span {
+  color: #809091;
+  font-size: 11px;
+}

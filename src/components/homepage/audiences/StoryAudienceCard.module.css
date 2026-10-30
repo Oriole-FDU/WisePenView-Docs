@@ -1,0 +1,261 @@
+.card {
+  width: min(1180px, 82vw);
+  min-width: min(1180px, 82vw);
+  height: min(680px, calc(100vh - 154px));
+  min-height: 590px;
+  padding: 36px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  color: #172c2d;
+  background: #f8fcfc;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.24);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  column-gap: 56px;
+  align-items: end;
+}
+
+.header > p {
+  grid-column: 1 / -1;
+  margin: 0 0 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #11777b;
+  font-family: var(--wise-font-family);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.header > p span {
+  color: #60b5b9;
+}
+
+.header h2 {
+  margin: 0;
+  color: #132829;
+  font-size: clamp(35px, 3vw, 48px);
+  font-weight: 620;
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+}
+
+.header h2 span {
+  display: block;
+}
+
+.header h2,
+.header > div {
+  animation: story-content-in 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header > div {
+  color: #607576;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.storyLayout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.storyList {
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  border-top: 1px solid #dce6e6;
+}
+
+.storyList button {
+  min-height: 58px;
+  padding: 0;
+  display: block;
+  border: 0;
+  border-bottom: 1px solid #dce6e6;
+  color: #778889;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: color 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+}
+
+.storySummary {
+  min-height: 58px;
+  padding: 0 14px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.storySummary > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.storySummary small {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #9a7b2e;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.storySummary small svg {
+  width: 12px;
+  height: 12px;
+}
+
+.storyNumber {
+  color: #91a1a2;
+  font-family: var(--wise-font-mono);
+  font-size: 10px;
+}
+
+.storyLabel {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.storyList .storyActive {
+  color: #174f51;
+  background: #eaf7f7;
+  box-shadow: inset 3px 0 #60b5b9;
+}
+
+.storyExpanded {
+  padding: 0 18px 0 56px;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition:
+    grid-template-rows 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    padding 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.storyActive .storyExpanded {
+  padding-block: 1px 20px;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.storyExpandedInner {
+  min-height: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.storyDescription {
+  margin-top: 11px;
+  display: block;
+  color: #647778;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.storyOutcomes {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+}
+
+.storyOutcomes > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #4e6c6d;
+  font-size: 12px;
+}
+
+.storyOutcomes svg {
+  width: 13px;
+  height: 13px;
+  color: #248286;
+  stroke-width: 2;
+}
+
+.storyVisual {
+  min-width: 0;
+  min-height: 0;
+  align-self: start;
+}
+
+@keyframes story-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-height: 790px) {
+  .card {
+    padding: 30px;
+    gap: 18px;
+  }
+
+  .header h2 {
+    font-size: 35px;
+  }
+
+  .storySummary {
+    min-height: 52px;
+  }
+
+  .storyActive .storyExpanded {
+    padding-bottom: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 88vw;
+    min-width: 88vw;
+    height: auto;
+    min-height: 760px;
+    padding: 28px;
+  }
+
+  .header,
+  .storyLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .storyList {
+    align-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header h2,
+  .header > div {
+    animation: none;
+  }
+
+  .storyList button,
+  .storyExpanded {
+    transition: none;
+  }
+}
