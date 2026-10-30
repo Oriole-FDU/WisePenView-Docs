@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import {Pause, Play} from 'lucide-react';
 
-import {BrowserFrame} from './BrowserFrame';
+import {BrowserFrame} from '../shared/BrowserFrame';
 import {heroStages, type HeroStage} from './heroScenario';
 import styles from './WisePenProductDemo.module.css';
 import {DEMO_HEIGHT, DEMO_WIDTH, useDemoScale} from './useDemoScale';

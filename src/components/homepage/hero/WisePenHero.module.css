@@ -69,8 +69,8 @@
     linear-gradient(90deg, rgba(36, 130, 134, 0.042) 1px, transparent 1px),
     linear-gradient(180deg, #fbfefe 0%, #f4fbfb 74%, #eef8f8 100%);
   background-size: 44px 44px, 44px 44px, auto;
-  min-height: calc(100vh - 60px);
-  padding: 62px max(88px, calc((100vw - 1440px) / 2)) 72px;
+  min-height: calc(100vh - var(--ifm-navbar-height) - 106px);
+  padding: 62px var(--wise-site-gutter) 72px;
   display: grid;
   grid-template-columns: minmax(430px, 0.82fr) minmax(680px, 1.18fr);
   align-items: center;
@@ -211,7 +211,7 @@
 @media (max-width: 1250px) {
   .heroLab {
     grid-template-columns: 1fr;
-    padding: 72px 28px 92px;
+    padding: 72px var(--wise-site-gutter) 92px;
   }
 
   .heroCopy {

@@ -36,11 +36,11 @@ function AgentPicker(): ReactNode {
   return (
     <div className={`${styles.pickerPopover} ${styles.agentPicker}`}>
       <strong>Agent</strong>
-      <div><BotOff /><span>无 Agent</span></div>
-      <div className={styles.pickerSelected}><Bot /><span>论文阅读助手</span><Check /></div>
-      <div><Bot /><span>课程材料整理助手</span></div>
+      <div><BotOff size={16} /><span>无 Agent</span></div>
+      <div className={styles.pickerSelected}><Bot size={16} /><span>论文阅读助手</span><Check size={14} /></div>
+      <div><Bot size={16} /><span>课程材料整理助手</span></div>
       <hr />
-      <div><Folder /><span>从组内选择</span></div>
+      <div><Folder size={16} /><span>从组内选择</span></div>
     </div>
   );
 }

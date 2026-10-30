@@ -97,6 +97,14 @@
   --wise-sidebar-hover: var(--wise-surface-component);
   --wise-sidebar-active: var(--wise-surface-selected);
 
+  /* 官网各 Section 共用同一条内容边界，背景仍可全宽延伸。 */
+  --wise-site-max-width: 1320px;
+  --wise-site-gutter: max(
+    clamp(20px, 4vw, 64px),
+    calc((100vw - var(--wise-site-max-width)) / 2)
+  );
+  --wise-reading-width: 680px;
+
   --ifm-font-family-base: var(--wise-font-family);
   --ifm-font-family-monospace: var(--wise-font-mono);
   --ifm-color-primary: var(--wise-accent);
