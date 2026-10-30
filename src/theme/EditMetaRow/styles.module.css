@@ -1,0 +1,81 @@
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--wise-border-light);
+}
+
+.lastUpdated {
+  color: var(--wise-muted);
+  font-size: 0.8rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid var(--wise-border-light);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--wise-muted);
+  font: inherit;
+  font-size: 0.8rem;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.action:hover {
+  border-color: var(--wise-border-interactive);
+  background: var(--wise-surface-hover);
+  color: var(--wise-accent-deep);
+  text-decoration: none;
+}
+
+.action:focus-visible {
+  outline: 2px solid var(--wise-accent);
+  outline-offset: 2px;
+}
+
+.copyAction {
+  min-width: 104px;
+}
+
+@media (max-width: 576px) {
+  .metaRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .action {
+    flex: 1;
+  }
+}
+
+@media print {
+  .actions {
+    display: none;
+  }
+}

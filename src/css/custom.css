@@ -90,11 +90,11 @@
   --wise-border: var(--wise-border-interactive);
   --wise-border-light: var(--wise-border-subtle);
   --wise-accent-soft: var(--wise-surface-component);
-  --wise-sidebar: var(--wise-surface-subtle);
+  --wise-sidebar: var(--wise-neutral-2);
   --wise-sidebar-ink: var(--wise-text-strong);
   --wise-sidebar-muted: var(--wise-text-muted);
   --wise-sidebar-border: var(--wise-border-subtle);
-  --wise-sidebar-hover: var(--wise-surface-component);
+  --wise-sidebar-hover: var(--wise-neutral-3);
   --wise-sidebar-active: var(--wise-surface-selected);
 
   /* 官网各 Section 共用同一条内容边界，背景仍可全宽延伸。 */
@@ -115,7 +115,7 @@
   --ifm-color-primary-lighter: var(--wise-aqua-7);
   --ifm-color-primary-lightest: var(--wise-aqua-5);
   --ifm-background-color: var(--wise-canvas);
-  --ifm-navbar-background-color: color-mix(in srgb, var(--wise-aqua-1) 94%, transparent);
+  --ifm-navbar-background-color: color-mix(in srgb, var(--wise-neutral-1) 94%, transparent);
   --ifm-footer-background-color: var(--wise-canvas);
   --ifm-heading-color: var(--wise-text-strong);
   --ifm-font-color-base: var(--wise-text-strong);
@@ -123,7 +123,7 @@
   --ifm-code-font-size: 92%;
   --ifm-global-radius: 8px;
   --ifm-toc-border-color: var(--wise-border-light);
-  --docusaurus-highlighted-code-line-bg: var(--wise-surface-component);
+  --docusaurus-highlighted-code-line-bg: var(--wise-neutral-3);
 }
 
 html {
@@ -273,7 +273,7 @@ select {
 
 .theme-doc-markdown {
   width: 100%;
-  max-width: 818px;
+  max-width: 960px;
   font-size: var(--wise-note-font-size);
   line-height: var(--wise-note-line-height);
   font-weight: var(--wise-font-weight-regular);
@@ -288,7 +288,7 @@ main[class*='docMainContainer'] > .container {
 [class*='docItemContainer'],
 .pagination-nav {
   width: 100%;
-  max-width: 818px;
+  max-width: 960px;
 }
 
 @media (max-width: 1100px) {
@@ -313,26 +313,26 @@ main[class*='docMainContainer'] > .container {
   }
 }
 
-@media (max-width: 1439px) {
-  .theme-doc-toc-desktop {
-    display: none !important;
-  }
+/* 右侧目录：恢复为桌面文档站的三栏布局，弱化视觉权重并贴近吸顶导航。 */
+.theme-doc-toc-desktop .tableOfContents {
+  top: calc(var(--ifm-navbar-height) + 1.5rem);
+  border-left: 1px solid var(--wise-border-light);
+  padding-left: 16px;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-/* 隐藏目录时同时释放它占据的网格列，避免正文仍被压缩到 75%。 */
-@media (min-width: 997px) and (max-width: 1439px) {
-  main[class*='docMainContainer'] > .container > .row > [class*='docItemCol'] {
-    max-width: 100% !important;
-    flex-basis: 100%;
-  }
+.theme-doc-toc-desktop .table-of-contents__link {
+  color: var(--wise-muted);
+}
 
-  main[class*='docMainContainer'] > .container > .row > .col--3 {
-    display: none;
-  }
+.theme-doc-toc-desktop .table-of-contents__link:hover {
+  color: var(--wise-accent-deep);
+}
 
-  .theme-doc-toc-mobile {
-    display: block;
-  }
+.theme-doc-toc-desktop .table-of-contents__link--active {
+  color: var(--wise-accent-deep);
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
@@ -349,7 +349,7 @@ main[class*='docMainContainer'] > .container {
 .markdown h5,
 .markdown h6 {
   color: var(--wise-ink);
-  font-weight: var(--wise-font-weight-medium);
+  font-weight: var(--wise-font-weight-semibold);
   letter-spacing: 0;
   line-height: var(--wise-note-heading-line-height);
 }
@@ -357,20 +357,22 @@ main[class*='docMainContainer'] > .container {
 .markdown h1 {
   margin-top: 0;
   margin-bottom: 24px;
-  font-size: var(--wise-note-heading-1-size);
+  font-size: 42px;
+  font-weight: var(--wise-font-weight-bold);
 }
 
 .markdown h2 {
   margin-top: 32px;
   margin-bottom: 12px;
   padding-top: 0;
-  font-size: var(--wise-note-heading-2-size);
+  font-size: 30px;
+  font-weight: var(--wise-font-weight-bold);
 }
 
 .markdown h3 {
   margin-top: 28px;
   margin-bottom: 12px;
-  font-size: var(--wise-note-heading-3-size);
+  font-size: 22px;
 }
 
 .markdown h4 {
@@ -402,12 +404,6 @@ main[class*='docMainContainer'] > .container {
   color: var(--wise-ink);
 }
 
-/* 对齐参考仓库的块间节奏，标题与段落使用统一的间距。 */
-.theme-doc-markdown :is(h1, h2, h3, h4, h5, h6) {
-  margin-top: 18px;
-  margin-bottom: 8px;
-}
-
 .theme-doc-markdown > :is(p, ul, ol, blockquote, table, pre) {
   margin-top: 0;
   margin-bottom: 8px;
@@ -436,7 +432,7 @@ main[class*='docMainContainer'] > .container {
 }
 
 .markdown thead tr {
-  background: var(--wise-accent-soft);
+  background: var(--wise-neutral-3);
 }
 
 .markdown th,
@@ -446,7 +442,7 @@ main[class*='docMainContainer'] > .container {
 
 .markdown blockquote {
   border-left-color: var(--wise-border-interactive);
-  background: var(--wise-surface-subtle);
+  background: var(--wise-neutral-2);
   color: var(--wise-ink);
 }
 
@@ -462,12 +458,12 @@ main[class*='docMainContainer'] > .container {
 .pagination-nav__link:hover,
 .pagination-nav__link:focus-visible {
   border-color: var(--wise-border-interactive);
-  background: var(--wise-surface-subtle);
+  background: var(--wise-neutral-2);
 }
 
 .footer {
   border-top: 1px solid var(--wise-border-light);
-  background: var(--wise-surface-subtle);
+  background: var(--wise-neutral-2);
   padding: 14px 0 16px;
 }
 
@@ -503,6 +499,29 @@ main[class*='docMainContainer'] > .container {
 
 /* 移动导航同样使用浅色表面，返回入口与导航文字保持相同的中性色语义。 */
 .navbar-sidebar__back {
-  background: var(--wise-surface-component);
+  background: var(--wise-neutral-3);
   color: var(--wise-text-strong);
 }
+
+/* 内联代码：弱化背景、强调品牌色，避免在正文中过于突兀。 */
+.markdown :not(pre) > code {
+  padding: 0.15em 0.45em;
+  border: 1px solid var(--wise-border-light);
+  border-radius: 6px;
+  background: var(--wise-neutral-3);
+  color: var(--wise-accent-deep);
+  font-size: 0.92em;
+}
+
+/* 代码块：浅色表面 + 轻边框，与浅色画布保持一体。 */
+.theme-code-block {
+  border: 1px solid var(--wise-border-light);
+  border-radius: 10px;
+  box-shadow: none;
+  background: var(--wise-surface-app);
+}
+
+.theme-code-block pre {
+  background: transparent;
+}
+

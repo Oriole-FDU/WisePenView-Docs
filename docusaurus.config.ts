@@ -23,12 +23,25 @@ const config: Config = {
     locales: ['zh-Hans'],
   },
 
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+        highlightSearchTermsOnTargetPage: true,
+        searchBarPosition: 'right',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/Oriole-FDU/WisePenView-Docs/edit/main/',
         },
         blog: false,
         theme: {
